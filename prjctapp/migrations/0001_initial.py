@@ -27,6 +27,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('upload', models.FileField(upload_to=b'uploads%Y%m%d')),
+                ('pub_date', models.DateTimeField(default=django.utils.timezone.now, verbose_name=b'date published')),
             ],
             options={
             },
@@ -43,7 +44,8 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('user_name', models.CharField(max_length=200)),
-                ('pub_date', models.DateTimeField(verbose_name=b'date published')),
+                ('password', models.CharField(max_length=10)),
+                ('pub_date', models.DateTimeField(default=django.utils.timezone.now, verbose_name=b'date published')),
                 ('user_photo', models.ForeignKey(to='prjctapp.Upload')),
             ],
             options={

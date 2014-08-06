@@ -31,28 +31,36 @@
     <![endif]-->
   </head>
 
-  <body>
-
-    <div class="container">
-
-      <form class="form-signin" role="form">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <input type="email" class="form-control" placeholder="Email address" required autofocus>
-        <input type="password" class="form-control" placeholder="Password" required>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="remember-me"> Remember me
-          </label>
-        </div>
+    <h2 class="col-sm-5 control-label">Sign up OR Register </h2>
+	<form class="form-signin" role="form" enctype="multipart/form-data"   role="form" action="/profile/" method="post">
+	{% csrf_token %}
+    <div class="form-group">
+    <label for="inputName" class="col-sm-5 control-label">Username</label>
+    <div class="col-sm-15">
+     <input type="text" name="user_name" size="10" maxlength="50" >
+    </div>
+  </div>
+        <div class="form-group">
+    <label for="inputName" class="col-sm-5 control-label">Password</label>
+    <div class="col-sm-15">
+     <input type="password" name="password" size="10" maxlength="50" >
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default">Submit</button>
+    </div>
+  </div>
+  </form>
         <!-- <button  class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button> -->
-		<a href = "http://127.0.0.1:3000/profile/" class="btn btn-lg btn-primary btn-block" role="button">Sign in</a>
-      </form>
+		
+      
 
-    </div> <!-- /container -->
+  <!-- /container -->
 
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-  </body>
+  
 </html>

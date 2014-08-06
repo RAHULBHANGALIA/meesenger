@@ -3,9 +3,12 @@ from django.utils import timezone
 import datetime
 
     # Create your models here.
+
+    
 class User(models.Model):
-    user_photo=models.ForeignKey('Upload',related_name='+')
+    user_photo=models.ForeignKey('Upload',related_name='+',null=True,blank=True)
     user_name = models.CharField(max_length=200)
+    password = models.CharField(max_length=10)
     pub_date = models.DateTimeField('date published',default=timezone.now)
 
     def was_published_today(self):
